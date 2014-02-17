@@ -1,13 +1,5 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-
 This readme is for the Cafe Storefront. I had an issue with this step on the pdf where you call post.user.name. 
 I tried doing it on my schema but it didn't work.
 
