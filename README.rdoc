@@ -1,7 +1,33 @@
 == README
 
 This readme is for the Cafe Storefront. I had an issue with this step on the pdf where you call post.user.name. 
-I tried doing it on my schema but it didn't work.
+I tried doing it on my schema but it didn't work. However, it works on heroku so I guess it's ok.
+
+Link to Heroku: http://cafe-storefront.herokuapp.com/
 
 My schema was one of a Users table and Items table. Users columns were name, email, password, and level. Items columns
-were item_name, amount, price, and user (who ordered the item).
+were item_name, amount, price, and user (who ordered the item). 
+
+ActiveRecord::Schema.define(version: 20140217072756) do
+
+  create_table "items", force: true do |t|
+    t.string   "item_name"
+    t.integer  "amount"
+    t.float    "price"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["user_id"], name: "index_items_on_user_id"
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.string   "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+end
