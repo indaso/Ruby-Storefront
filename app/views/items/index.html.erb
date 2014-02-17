@@ -1,19 +1,21 @@
-<h1>Items List</h1>
-<div class="table-responsive">
-	<table class="table table-hover">
-		<tr>
-			<td><b>Item Name</b></td>
-			<td><b>Amount</b></td>
-			<td><b>Price</b></td>
-			<td><b>Updated Last By</b></td>
-		</tr>
-		<% @items.each do |item| %>
-		<tr>
-			<td><%=item.item_name%></td>
-			<td><%=item.amount%></td>
-			<td><%=item.price%></td>
-			<td><%=item.user.name%></td>
-		</tr>
-		<%end%>
-	</table>
+<div class="container">
+	<h1>Items List</h1>
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<tr>
+				<td><b>Item Name</b></td>
+				<td><b>Amount</b></td>
+				<td><b>Price</b></td>
+				<td><b>Updated Last By</b></td>
+			</tr>
+			<% @items.each do |item| %>
+			<tr>
+				<td><%=item.item_name%></td>
+				<td><%=item.amount%></td>
+				<td><%=item.price%></td>
+				<td><%=item.user.name%></td>
+			</tr>
+			<%end%>
+		</table>
+	</div>
 </div>
