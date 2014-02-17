@@ -1,7 +1,7 @@
 == README
 
 This readme is for the Cafe Storefront. I had an issue with this step on the pdf where you call post.user.name. 
-I tried doing it on my schema but it didn't work.
+I tried doing it on my schema but it didn't work. However, it works on heroku so I guess it's ok.
 
 My schema was one of a Users table and Items table. Users columns were name, email, password, and level. Items columns
-were item_name, amount, price, and user (who ordered the item).
+were item_name, amount, price, and user (who ordered the item). 
