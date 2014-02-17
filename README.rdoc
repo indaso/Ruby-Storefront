@@ -6,7 +6,7 @@ I tried doing it on my schema but it didn't work. However, it works on heroku so
 Link to Heroku: http://cafe-storefront.herokuapp.com/
 
 My schema was one of a Users table and Items table. Users columns were name, email, password, and level. Items columns
-were item_name, amount, price, and user (who ordered the item). 
+were item_name, amount, price, and user (who updated the inventory). 
 
 ActiveRecord::Schema.define(version: 20140217072756) do
 
