@@ -1,0 +1,23 @@
+<h1>Items#new</h1>
+
+<%= form_for(@item) do |f| %>
+	<div class="field">
+		<p>Name</p>
+		<%=f.text_field :item_name%>
+	</div>
+	<div class="field">
+		<p>Amount</p>
+		<%=f.text_field :amount%>
+	</div>
+	<div class="field">
+		<p>Price</p>
+		<%=f.text_field :price%>
+	</div>
+	<div class="field">
+		<p>Ordered By</p>
+		<%=f.collection_select :user_id, User.all, :id, :name%>
+	</div>
+	<div class="actions">
+		<%=f.submit%>
+	</div>
+<%end%>
