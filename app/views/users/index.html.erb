@@ -1,18 +1,21 @@
 <h1>Users List</h1>
 
-<table border="1">
-	<tr>
-		<td>Name</td>
-		<td>Email</td>
-		<td>Password</td>
-		<td>Status</td>
-	</tr>
-	<% @users.each do |user| %>
-	<tr>
-		<td><%=user.name%></td>
-		<td><%=user.email%></td>
-		<td><%user.password%></td>
-		<td><%user.level%></td>
-	</tr>
-	<%end%>
-</table>
+<div class="table-responsive">
+
+	<table class="table table-hover">
+		<tr>
+			<td><b>Name</b></td>
+			<td><b>Email</b></td>
+			<td><b>Password</b></td>
+			<td><b>Status</b></td>
+		</tr>
+		<% @users.each do |user| %>
+		<tr>
+			<td><%=user.name%></td>
+			<td><%=user.email%></td>
+			<td><%user.password%></td>
+			<td><%user.level%></td>
+		</tr>
+		<%end%>
+	</table>
+</div>

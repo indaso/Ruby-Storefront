@@ -12,20 +12,14 @@
  *= require_tree .
  */
 
-.navbar {
-	border: 1px solid black;
-	background: cyan;
-	border-radius: 5px;
-	height: 40px;
-	font-family: arial, sans-serif;
-	font-weight: bold;
-	font-size: 14px;
-}
-
-table {
-	border-collapse: collapse;
-}
-
 a {
 	text-decoration: none;
+}
+
+.specborder {
+	border-style: solid;
+	border-width: thin;
+	border-color: #ddd;
+	border-radius: 5px;
+	padding-bottom: 10px;
 }
