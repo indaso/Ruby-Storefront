@@ -31,3 +31,10 @@ ActiveRecord::Schema.define(version: 20140217072756) do
   end
 
 end
+
+
+2/23/14 HW5
+
+I didn't really have any issues. I was just wondering exactly how to update the controller without overwriting it in the command line.
+Eventually I just ran rails generate Users show without overwriting, and it made me a show page. Other than that,
+I had no issues with this assignment.
