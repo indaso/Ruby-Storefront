@@ -9,13 +9,17 @@
 				<td><b>Email</b></td>
 				<td><b>Password</b></td>
 				<td><b>Status</b></td>
+				<td><b>Edit User</b></td>
+				<td><b>Remove User</b></td>
 			</tr>
 			<% @users.each do |user| %>
 			<tr>
-				<td><%=user.name%></td>
+				<td><%= link_to user.name, user_path(user.id) %></td>
 				<td><%=user.email%></td>
 				<td><%user.password%></td>
-				<td><%user.level%></td>
+				<td><%=user.level%></td>
+				<td><%=link_to "Edit User", edit_user_path(user.id), :class => "btn btn-primary btn-sm" %></td>
+				<td><%=link_to "Delete User", user, confirm: "Are you sure you want to delete this user?", method: :delete, :class => "btn btn-primary btn-sm" %> </td>
 			</tr>
 			<%end%>
 		</table>

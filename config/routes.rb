@@ -1,4 +1,5 @@
 Storefront::Application.routes.draw do
+  get "users/show"
   get "home/index"
   # get "items/new"
   # get "items/edit"
