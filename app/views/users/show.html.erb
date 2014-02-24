@@ -1,12 +1,11 @@
 <div class="container">
-<h1>Users Profile</h1>
+	<h1>Users Profile</h1>
 
 
-<div class="container">
-	<h2><%=@user.name%></h2>
-	<p><%=@user.email%></p>
-	<p><%=@user.password %></p>
-	<p><%=@user.level%></p>
-	<%=link_to "edit user", edit_user_path(@user.id), :class => "btn btn-primary btn-sm" %>
-</div>
+	<div class="container">
+		<h2><%=@user.name%></h2>
+		<p><%=@user.email%></p>
+		<p><%=@user.password %></p>
+		<p><%=@user.level%></p>
+	</div>
 </div>
