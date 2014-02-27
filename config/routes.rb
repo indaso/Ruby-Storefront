@@ -1,4 +1,5 @@
 Storefront::Application.routes.draw do
+  devise_for :users
   get "users/show"
   get "home/index"
   # get "items/new"
