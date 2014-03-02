@@ -38,3 +38,8 @@ end
 I didn't really have any issues. I was just wondering exactly how to update the controller without overwriting it in the command line.
 Eventually I just ran rails generate Users show without overwriting, and it made me a show page. Other than that,
 I had no issues with this assignment.
+
+3/2/14 HW6
+I had problems with routes and devise overriding methods such as users#create and users#edit. However, I manually fixed the routes in routes.rb
+So there should be no problems. I didn't get the Mailer working yet. Also, using gem 'devise' to add the gem to the gemfile didn't work
+for me. I got an unknown command error with gem, so I just added it manually to the Gemfile.
