@@ -1,5 +1,5 @@
 <div class="container specborder">
-	<h1>Sign up</h1>
+	<h2>Sign up</h2>
 
 	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 	<%= devise_error_messages! %>
@@ -21,6 +21,11 @@
 
 	<div class="form-group"><%= f.label :password_confirmation %><br />
 		<%= f.password_field :password_confirmation, :class => 'form-control' %>
+	</div>
+
+	<div class="form-group">
+		<label>Status</label>
+		<%=f.select(:level, [['Employee'], ['Manager']], {}, { :class => 'btn btn-primary btn-sm' })%>
 	</div>
 
 	<div class="form-group">

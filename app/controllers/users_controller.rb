@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def new
-  	@user = User.new
+    if user_signed_in?
+      @user = User.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def index

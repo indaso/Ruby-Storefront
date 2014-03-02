@@ -10,12 +10,8 @@
 		<%=f.text_field :email, :class => 'form-control'%>
 	</div>
 	<div class="form-group">
-		<label>password</label>
-		<%=f.text_field :password, :class => 'form-control'%>
-	</div>
-	<div class="form-group">
-		<label>level</label>
-		<%=f.text_field :level, :class => 'form-control'%>
+		<label>Status</label>
+		<%=f.select(:level, [['Employee'], ['Manager']], {}, { :class => 'btn btn-primary btn-sm' })%>
 	</div>
 	<br>
 	<div class="actions">
