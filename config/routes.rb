@@ -1,15 +1,16 @@
 Storefront::Application.routes.draw do
   devise_for :users , :skip => [:registrations]
   devise_scope :user do
-  get "signup",   :to => "users#new"
-  get "signin",   :to => "devise/sessions#new"
-  get "signout",  :to => "devise/sessions#destroy"
-  get "cancel_user_registration", :to => "devise/registrations#cancel"
-  post "user_registration",       :to => "devise/registrations#create"
-  get "new_user_registration",    :to => "devise/registrations#new"
-  get "edit_user_registration",   :to => "devise/registrations#edit"
-  put "user_registration", :to => "devise/registrations#update"
-end
+    get "signup",   :to => "users#new"
+    get "signin",   :to => "devise/sessions#new"
+    get "signout",  :to => "devise/sessions#destroy"
+    get "cancel_user_registration", :to => "devise/registrations#cancel"
+    post "user_registration",       :to => "devise/registrations#create"
+    get "new_user_registration",    :to => "devise/registrations#new"
+    get "edit_user_registration",   :to => "devise/registrations#edit"
+    put "user_registration", :to => "devise/registrations#update"
+  end
+
   # get "users/show"
   # get "home/index"
   # get "items/new"
