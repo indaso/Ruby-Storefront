@@ -12,7 +12,7 @@ Storefront::Application.routes.draw do
   end
 
   # get "users/show"
-  # get "home/index"
+  get "home/index"
   # get "items/new"
   # get "items/edit"
   # get "items/show"
