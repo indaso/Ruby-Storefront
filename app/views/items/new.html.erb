@@ -1,6 +1,14 @@
 <div class="container specborder">
 	<h1>New Item</h1>
-
+	<div class="err msg">
+		<% if @item.errors.any? %>
+		<ul>
+			<% @item.errors.full_messages.each do |msg| %>
+			<li><%=msg%></li>
+			<%end%>
+		</ul>
+		<%end%>
+	</div>
 	<%= form_for @item, :html => { :class => 'form-search' } do |f| %>
 		<div class="form-group">
 			<label>Name</label>

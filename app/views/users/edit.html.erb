@@ -1,5 +1,14 @@
 <div class="container specborder">
 	<h1>Edit User</h1>
+	<div class="err msg">
+		<% if @user.errors.any? %>
+		<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+			<li><%=msg%></li>
+			<%end%>
+		</ul>
+		<%end%>
+	</div>
 	<%= form_for @user, :html => {:class => 'form' } do |f| %>
 	<div class="form-group">
 		<label>name</label>
