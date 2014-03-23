@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
   def create
   	@item = Item.new(item_params)
   	if @item.save
+      Notifications.new_item(@item).deliver
   		redirect_to items_path
   	else
   		render 'new'
