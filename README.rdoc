@@ -40,3 +40,7 @@ I didn't really have any issues. I was just wondering exactly how to update the 
 <b>3/2/14 HW6</b>
 
 I had problems with routes and devise overriding methods such as users#create and users#edit. However, I manually fixed the routes in routes.rb. So there should be no problems. I didn't get the Mailer working yet. Also, using gem 'devise' to add the gem to the gemfile didn't work for me. I got an unknown command error with gem, so I just added it manually to the Gemfile. A major error I had was deploying to heroku. A TA and I struggled with this, but I used heroku logs to figure out what the problem was (with the help of stack overflow). I had to uncomment the secret key line in devise.rb under initializers.
+
+<b>3/7/14 HW7</b>
+
+I had trouble validations because I was getting duplicate validations. However, uninstalling the :validations part in devise user fixed that. Also, my validate didn't work until I added :password_confirmation to my user_controller parameters. Otherwise I was getting a Password blank error. I added validations to item amount (numericality: integer, true), item price (numericality) , and item name (presense, uniqueness true). Also, I added validations to new user and edit user (name presence true, password confirmation and email unique presence true).
