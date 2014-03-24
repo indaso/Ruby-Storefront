@@ -47,4 +47,4 @@ I had trouble validations because I was getting duplicate validations. However, 
 
 <b>3/22/14 HW8</b>
 
-I didn't really have any issues. I added notifications for new items and new users, along with devise mailer integration into the application. I also made the email model include a uniqueness validation, otherwise the application crashes.
+I didn't really have any issues. I added notifications for new items and new users, along with devise mailer integration into the application. I also made the email model include a uniqueness validation, otherwise the application crashes. Note: A notification is only sent to the new user's email if the account is created by someone else. This will likely be edited in further iterations.
