@@ -7,5 +7,21 @@
 		<p><%=@user.email%></p>
 		<p><%=@user.password%></p>
 		<p><%=@user.level%></p>
+		<p><b>Items user has recently updated</b></p>
+
+		<table class="table table-hover">
+			<tr>
+				<td><b>Item Name</b></td>
+				<td><b>Item Price</b></td>
+				<td><b>Item Amount</b></td>
+			</tr>
+			<% @items.each do |item| %>
+			<tr>
+				<td><%=item.item_name%></td>
+				<td><%=item.price%></td>
+				<td><%=item.amount%></td>
+			</tr>
+			<%end%>
+		</table>
 	</div>
 </div>

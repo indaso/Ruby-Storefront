@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def index
-  	@users = User.all
+  	@users = User.order(:name)
   end
 
   def edit
@@ -35,6 +35,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @items = Item.where(user_id: params[:id]).limit(5)
   end
 
   def create
