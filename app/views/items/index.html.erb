@@ -1,9 +1,16 @@
+<%= javascript_include_tag "items.js", "data-turbolinks-track" => false %>
 <div class="container">
+
+	<div class="help-text">
+		<p>To change the amount, click on the edit button. This will bring you to a screen to edit the name, amount or price of an item. Click on the column names Item name, amount, or price to order the table.
+		</p>
+	</div>
+	<br />
 	<h1>Items List</h1>
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<tr>
-				<td><b><%= link_to "Item Name", :sort => "item_name" %></b></td>
+				<td><b><%= link_to "Item Name", :sort => "item_name" %><span class="help"> ?</span></b></td>
 				<td><b><%= link_to "Amount", :sort => "amount" %></b></td>
 				<td><b><%= link_to "Price", :sort => "price" %></b></td>
 				<td><b>Updated Last By</b></td>

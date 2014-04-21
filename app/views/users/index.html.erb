@@ -1,11 +1,18 @@
+<%= javascript_include_tag "users.js", "data-turbolinks-track" => false %>
+
 <div class="container">
+	<div class="help-text">
+		<p>To edit the users, click on the edit button. This will bring you to a screen to edit the name, email or status of a user. To delete a user, click the "delete user" button.
+		</p>
+	</div>
+	<br />
 	<h1>Users List</h1>
 
 	<div class="table-responsive">
 
 		<table class="table table-hover">
 			<tr>
-				<td><b>Name</b></td>
+				<td><b>Name<span class="help"> ?</span></b></td>
 				<td><b>Email</b></td>
 				<td><b>Status</b></td>
 				<td><b>Edit User</b></td>
