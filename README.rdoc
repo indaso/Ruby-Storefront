@@ -52,3 +52,7 @@ I didn't really have any issues. I added notifications for new items and new use
 <b>4/5/14 HW9</b>
 
 I added 2 order queries. One of the queries allows the user to sort the Items table by amount, name or price (items#index). The other sorts the User list table by name (users#index). Next, the where query got 5 items that the user updated in the items table in (users#show). This displays the items under the users profile. Later, I'll probably replace these queries with gems that implement the features I wantin a better way, such as will_paginate and a search function. The updated table under a users profile will be edited to include the items they updated, even if another user has updated it in the present.
+
+<b>4/21/14 HW10</b>
+
+I added javascript in my users.js and items.js for the index.html for both items and users. When a user hovers over the question mark, it displays text for helping the user.
