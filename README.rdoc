@@ -55,4 +55,4 @@ I added 2 order queries. One of the queries allows the user to sort the Items ta
 
 <b>4/21/14 HW10</b>
 
-I added javascript in my users.js and items.js for the index.html for both items and users. When a user hovers over the question mark, it displays text for helping the user.
+I added javascript in my users.js and items.js for the index.html for both items and users. When a user hovers over the question mark, it displays text for helping the user. I had to install the jquery-turbolinks gem to stop turbolinks from breaking the javascript due to it's use of ajax.
