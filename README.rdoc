@@ -56,3 +56,14 @@ I added 2 order queries. One of the queries allows the user to sort the Items ta
 <b>4/21/14 HW10</b>
 
 I added javascript in my users.js and items.js for the index.html for both items and users. When a user hovers over the question mark, it displays text for helping the user. I had to install the jquery-turbolinks gem to stop turbolinks from breaking the javascript due to it's use of ajax.
+
+
+<b>Final</b>
+This application is a online storefront. Users can sign in and make accounts using the Devise gem, which handles user authentication. Employees can add items to the database, and amounts and prices along with them. The Users database contains user names, emails and statuses. A search function was included for the items database using ajax.
+The Devise gem adds user authentication to the application, documentation located here: https://github.com/plataformatec/devise
+The Will_Paginate gem adds pagination (pages) to the item database, and limits it to 5 items per page. Documentation: https://github.com/mislav/will_paginate
+The letter_opener gem allows preview of email in the browser for the testing environment. Documentation is here https://github.com/ryanb/letter_opener
+The application also uses the Sendgrid add-on on Heroku, which is used to send notifications. Documentation can be found https://devcenter.heroku.com/articles/sendgrid
+My Javascript code is located in the application.js, item.js and user.js files. Item and User.js provide help text example on the index pages of users and items. Application.js provides the ajax for search function. 
+I had some errors with implementing the routes in the app initially, but as written above, I removed some of the default routes from the devise module. I also removed some of devise's validations to get rid of duplicate validations, and added a :password_confirmation to my users params.
+Here's the link to my application: http://cafe-storefront.herokuapp.com/
