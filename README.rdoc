@@ -1,69 +1,18 @@
 == README
 
-This readme is for the Cafe Storefront. I had an issue with this step on the pdf where you call post.user.name. 
-I tried doing it on my schema but it didn't work. However, it works on heroku so I guess it's ok.
 
-Link to Heroku: http://cafe-storefront.herokuapp.com/
-
-My schema was one of a Users table and Items table. Users columns were name, email, password, and level. Items columns
-were item_name, amount, price, and user (who updated the inventory). 
-
-ActiveRecord::Schema.define(version: 20140217072756) do
-
-  create_table "items", force: true do |t|
-    t.string   "item_name"
-    t.integer  "amount"
-    t.float    "price"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "items", ["user_id"], name: "index_items_on_user_id"
-
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password"
-    t.string   "level"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-end
-
-
-<b>2/23/14 HW5</b>
-
-I didn't really have any issues. I was just wondering exactly how to update the controller without overwriting it in the command line. Eventually I just ran rails generate Users show without overwriting, and it made me a show page. Other than that, I had no issues with this assignment.
-
-<b>3/2/14 HW6</b>
-
-I had problems with routes and devise overriding methods such as users#create and users#edit. However, I manually fixed the routes in routes.rb. So there should be no problems. I didn't get the Mailer working yet. Also, using gem 'devise' to add the gem to the gemfile didn't work for me. I got an unknown command error with gem, so I just added it manually to the Gemfile. A major error I had was deploying to heroku. A TA and I struggled with this, but I used heroku logs to figure out what the problem was (with the help of stack overflow). I had to uncomment the secret key line in devise.rb under initializers.
-
-<b>3/7/14 HW7</b>
-
-I had trouble validations because I was getting duplicate validations. However, uninstalling the :validations part in devise user fixed that. Also, my validate didn't work until I added :password_confirmation to my user_controller parameters. Otherwise I was getting a Password blank error. I added validations to item amount (numericality: integer, true), item price (numericality) , and item name (presense, uniqueness true). Also, I added validations to new user and edit user (name presence true, password confirmation and email unique presence true).
-
-<b>3/22/14 HW8</b>
-
-I didn't really have any issues. I added notifications for new items and new users, along with devise mailer integration into the application. I also made the email model include a uniqueness validation, otherwise the application crashes. Note: A notification is only sent to the new user's email if the account is created by someone else. This will likely be edited in further iterations.
-
-<b>4/5/14 HW9</b>
-
-I added 2 order queries. One of the queries allows the user to sort the Items table by amount, name or price (items#index). The other sorts the User list table by name (users#index). Next, the where query got 5 items that the user updated in the items table in (users#show). This displays the items under the users profile. Later, I'll probably replace these queries with gems that implement the features I wantin a better way, such as will_paginate and a search function. The updated table under a users profile will be edited to include the items they updated, even if another user has updated it in the present.
-
-<b>4/21/14 HW10</b>
-
-I added javascript in my users.js and items.js for the index.html for both items and users. When a user hovers over the question mark, it displays text for helping the user. I had to install the jquery-turbolinks gem to stop turbolinks from breaking the javascript due to it's use of ajax.
-
-
-<b>Final</b>
 This application is a online storefront. Users can sign in and make accounts using the Devise gem, which handles user authentication. Employees can add items to the database, and amounts and prices along with them. The Users database contains user names, emails and statuses. A search function was included for the items database using ajax.
+
+
 The Devise gem adds user authentication to the application, documentation located here: https://github.com/plataformatec/devise
 The Will_Paginate gem adds pagination (pages) to the item database, and limits it to 5 items per page. Documentation: https://github.com/mislav/will_paginate
 The letter_opener gem allows preview of email in the browser for the testing environment. Documentation is here https://github.com/ryanb/letter_opener
 The application also uses the Sendgrid add-on on Heroku, which is used to send notifications. Documentation can be found https://devcenter.heroku.com/articles/sendgrid
+
 My Javascript code is located in the application.js, item.js and user.js files. Item and User.js provide help text example on the index pages of users and items. Application.js provides the ajax for search function. 
+
+
 I had some errors with implementing the routes in the app initially, but as written above, I removed some of the default routes from the devise module. I also removed some of devise's validations to get rid of duplicate validations, and added a :password_confirmation to my users params.
+
+
 Here's the link to my application: http://cafe-storefront.herokuapp.com/
