@@ -1,10 +1,6 @@
 <div class="container">
-	<h1>Item</h1>
-
-
-	<div class="container">
-		<h2><%=@item.item_name%></h2>
-		<p>Amount: <%=@item.amount%></p>
-		<p>Price: <%=@item.price %></p>
-	</div>
+	<h1 class="page-header">Item</h1>
+		<h3> <span class="label label-primary"><%=@item.item_name%></span></h3>
+		<p>Amount: <span class="badge"><%=@item.amount%></span></p>
+		<p>Price: <span class="badge"><%=number_to_currency(@item.price)%></span></p>
 </div>

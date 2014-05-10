@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-  	@items = Item.order(params[:sort])
+  	#@items = Item.order(params[:sort]).paginate(:per_page => 5, :page => params[:page])
+    @items = Item.search(params[:search]).order(params[:sort]).paginate(:per_page => 5, :page => params[:page])
   end
 
   def new
@@ -18,6 +19,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update_attributes(item_params)
+      flash[:notice] = "Item was updated."
       redirect_to item_path(@item.id)
     else
       render 'edit'
@@ -27,6 +29,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
+    flash[:notice] = "Item was deleted."
     redirect_to items_path
   end
 
@@ -38,6 +41,7 @@ class ItemsController < ApplicationController
   	@item = Item.new(item_params)
   	if @item.save
       Notifications.new_item(@item).deliver
+      flash[:notice] = "Item was created."
   		redirect_to items_path
   	else
   		render 'new'
