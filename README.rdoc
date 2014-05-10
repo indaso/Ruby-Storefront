@@ -9,8 +9,11 @@ The Will_Paginate gem adds pagination (pages) to the item database, and limits i
 The letter_opener gem allows preview of email in the browser for the testing environment. Documentation is here https://github.com/ryanb/letter_opener
 The application also uses the Sendgrid add-on on Heroku, which is used to send notifications. Documentation can be found https://devcenter.heroku.com/articles/sendgrid
 
-My Javascript code is located in the application.js, item.js and user.js files. Item and User.js provide help text example on the index pages of users and items. Application.js provides the ajax for search function. 
+Some validations include uniqueness for email and names and numericality for integers along with presence being true.
 
+The scopes in the application included queries using where (match user's items), find (find user), order (items and users) and limit (limit to 5 users items they last updated).
+
+My Javascript code is located in the application.js, item.js and user.js files. Item and User.js provide help text example on the index pages of users and items. Application.js provides the ajax for search function. 
 
 I had some errors with implementing the routes in the app initially, but as written above, I removed some of the default routes from the devise module. I also removed some of devise's validations to get rid of duplicate validations, and added a :password_confirmation to my users params.
 
